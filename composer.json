@@ -8,7 +8,7 @@
 				"url": "git://github.com/raphievila/xtags.git",
 				"type": "git",
 				"reference": "master"
-			}
+			},
 			"require": {
 				"php": "^5.3"
 			}
