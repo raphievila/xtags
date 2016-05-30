@@ -5,19 +5,22 @@ Namespace xTags;
  *Version: 3.0.2
  *Last Modified: May 30th, 2016 02:36
  *License:
- *This work is licensed under the Creative Commons Attribution 3.0 Unported License.
- *To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
- *or send a letter to:
- *  Creative Commons,
- *  444 Castro Street, Suite 900,
- *  Mountain View,
- *  California, 94041, USA.
- *==================================================================================
- * This projects comes without any guaranteed, if you would like to support
- * or add new features contact rvila@revolutionvisualarts.com
- *==================================================================================
- * To use this code commercially you are required to give at least credit to the 
- * author and keep this copyright comment intact.
+	xTags let you code html tags easily and faster through PHP without
+	getting into too much confusion in your code.
+	Copyright (C) 2016  Rafael Vila - Revolution Visual Arts
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 class xTags{
@@ -36,6 +39,7 @@ class xTags{
         $this->switch = $this->substitute;
     }
     
+	//dynamic call to generate tags
     public function __call($tag, $args){
         $att = isset($args[1])? $args[1] : '';
         $close = isset($args[2])? $args[2] : '';
@@ -137,7 +141,8 @@ class xTags{
         $r = ($sclt == 0) ? '<'.$nm.$ls.'>'.$ct.'</'.$nm.'>' : '<'.$nm.$ls.' '.$att.'="'.$ct.'" />';
         return $r;
     }
-
+	
+	//complex tags predefined to simplify coding
     public function frm($txt,$att="",$a="",$m="",$e=""){
         $attList = array();
         if(!empty($a)){ $attList['action'] = $a; }
@@ -150,7 +155,14 @@ class xTags{
     public function group($txt,$legend='Legend',$attr=''){
         return $this->tag('fieldset',$this->legend($legend).$txt,$attr);
     }
+	
+    public function tbl($txt,$att="",$b=0,$p=0,$s=0){
+        $stdAtt = array('border'=>$b,'cellspacing'=>$s,'cellpadding'=>$p);
+        $newatt = $this->addAttributes($stdAtt, $att);
+        return $this->tag('table',$txt,$newatt);
+    }
     
+	//Self closing predefined tags
     public function img($txt,$attr=""){
         return $this->tag('img',$txt,$attr,1);
     }
@@ -166,7 +178,8 @@ class xTags{
     public function meta($txt,$attr=""){
         return $this->tag('meta',$txt,$attr,1);
     }
-
+	
+	//script tag
     public function script($txt,$type="",$method="text"){
         $attr = "type:$method/";
         $type = (empty($type))? 'js' : $type;
@@ -178,12 +191,6 @@ class xTags{
             default: $attr .= $type;
         }
         return $this->tag('script',$txt,$attr);
-    }
-
-    public function tbl($txt,$att="",$b=0,$p=0,$s=0){
-        $stdAtt = array('border'=>$b,'cellspacing'=>$s,'cellpadding'=>$p);
-        $newatt = $this->addAttributes($stdAtt, $att);
-        return $this->tag('table',$txt,$newatt);
     }
 	
 }
