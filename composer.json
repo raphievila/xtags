@@ -1,17 +1,12 @@
-"repositories": [
-	{
-		"type": "package",
-		"package": {
-			"name": "raphievila/xtags",
-			"version": "dev-master",
-			"source": {
-				"url": "git://github.com/raphievila/xtags.git",
-				"type": "git",
-				"reference": "master"
-			},
-			"require": {
-				"php": "^5.3"
-			}
-		}
+{
+	"name": "raphievila/xtags",
+	"version": "dev-master",
+	"source": {
+		"url": "git://github.com/raphievila/xtags.git",
+		"type": "git",
+		"reference": "master"
+	},
+	"require": {
+		"php": "^5.3"
 	}
-]
+}
