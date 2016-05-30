@@ -3,16 +3,11 @@
 		"type": "package",
 		"package": {
 			"name": "raphievila/xtags",
-			"version": "3.0.2",
+			"version": "dev-master",
 			"source": {
 				"url": "git://github.com/raphievila/xtags.git",
 				"type": "git",
 				"reference": "master"
-			},
-			"autoload": {
-				"psr-0": {
-					"Raphievila\\xTags" : "src"
-				}
 			}
 			"require": {
 				"php": "^5.3"
