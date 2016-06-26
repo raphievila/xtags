@@ -10,5 +10,8 @@
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
+	"psr-4": {
+		"Source\\": "src"
+	},
 	"minimum-stability": "dev"
 }
