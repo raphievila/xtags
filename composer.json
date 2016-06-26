@@ -1,6 +1,6 @@
 {
 	"name": "raphievila/xtags",
-	"version": "1.0.1",
+	"version": "dev-master",
 	"source": {
 		"url": "git://github.com/raphievila/xtags.git",
 		"type": "git",
@@ -10,5 +10,5 @@
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "dev-master"
 }
