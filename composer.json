@@ -6,6 +6,7 @@
 		"type": "git",
 		"reference": "master"
 	},
+	"license": "GHU 3.0",
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
