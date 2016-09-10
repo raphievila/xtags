@@ -2,8 +2,8 @@
 	"name": "raphievila/xtags",
 	"version": "dev-master",
 	"source": {
-		"url": "git://github.com/raphievila/xtags.git",
-		"type": "git",
+		"url": "https://github.com/raphievila/xtags.git",
+		"type": "https",
 		"reference": "master"
 	},
 	"license": "GNU 3.0",
