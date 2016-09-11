@@ -8,5 +8,5 @@
 	"autoload": {
 		"files": ["src/xTags.php"]
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "1.0.1"
 }
