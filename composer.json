@@ -10,8 +10,10 @@
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
-	"psr-4": {
-		"Source\\": "src"
+	"autoload": {
+		"psr-0": {
+			"xTags\\xTags": "src/"
+		}
 	},
 	"minimum-stability": "dev"
 }
