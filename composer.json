@@ -1,7 +1,7 @@
 {
 	"name": "raphievila/xtags",
 	"version": "dev-master",
-	"source": {
+	"repositories": {
 		"url": "https://github.com/raphievila/xtags.git",
 		"type": "https",
 		"reference": "master"
@@ -12,8 +12,13 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"xTags\\xTags": "src/"
-		}
+			"xTags\\xTags": "src/",
+			"Vendor\\Namespace\\": ""
+		},
+		"classmap": ["src/"]
+	},
+	"config": {
+		"github-protocols": ["git", "https", "http"]
 	},
 	"minimum-stability": "dev"
 }
