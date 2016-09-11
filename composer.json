@@ -1,18 +1,24 @@
 {
 	"name": "raphievila/xtags",
-	"version": "v1.0.1",
+	"version": "v1.0.0",
+	"repositories": {
+		"url": "https://github.com/raphievila/xtags.git",
+		"type": "https",
+		"reference": "master"
+	},
 	"license": "GNU 3.0",
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
-	"repositories": {
-		"source": {
-			"url": "https://github.com/raphievila/xtags/",
-			"type": "git"
-		}
-	},
 	"autoload": {
-		"files": ["src/xTags.php"]
+		"psr-4": {
+			"xTags\\xTags": "src/",
+			"Vendor\\Namespace\\": ""
+		},
+		"classmap": [ "src/" ]
 	},
-	"minimum-stability": "dev"
+	"config": {
+		"github-protocols": ["git", "https", "http"]
+	},
+	"minimum-stability": "stable"
 }
