@@ -1,6 +1,6 @@
 {
 	"name": "raphievila/xtags",
-	"version": "dev-master",
+	"version": "v1.0.1-RC",
 	"description": "A simple way to create HTML tag directly into PHP code, no code breaks.",
 	"repositories": {
 		"url": "https://github.com/raphievila/xtags.git",
