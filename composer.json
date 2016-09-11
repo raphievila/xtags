@@ -1,12 +1,12 @@
 {
 	"name": "raphievila/xtags",
-	"version": "dev-master",
+	"version": "v1.0.1",
 	"license": "GNU 3.0",
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
-	"psr-4": {
-		"Source\\": "src"
+	"autoload": {
+		"files": ["src/xTags.php"]
 	},
 	"minimum-stability": "dev"
 }
