@@ -12,8 +12,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"xTags\\xTags": "src/",
-			"Vendor\\Namespace\\": ""
+			"xTags\\": "src/",
+			"Vendor\\xTags\\": ""
 		},
 		"classmap": [ "src/" ]
 	},
