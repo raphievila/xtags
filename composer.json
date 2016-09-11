@@ -5,8 +5,14 @@
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
+	"repositories": {
+		"source": {
+			"url": "https://github.com/raphievila/xtags/",
+			"type": "git"
+		}
+	},
 	"autoload": {
 		"files": ["src/xTags.php"]
 	},
-	"minimum-stability": "1.0.1"
+	"minimum-stability": "v1.0.1"
 }
