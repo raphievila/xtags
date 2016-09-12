@@ -141,6 +141,11 @@ class xTags{
         $r = ($sclt == 0) ? '<'.$nm.$ls.'>'.$ct.'</'.$nm.'>' : '<'.$nm.$ls.' '.$att.'="'.$ct.'" />';
         return $r;
     }
+
+    //html comments
+    public function comment($string){
+        return "<!-- " . htmlspecialchars($string) . " -->";
+    }
 	
 	//complex tags predefined to simplify coding
     public function frm($txt,$att="",$a="",$m="",$e=""){
@@ -163,10 +168,6 @@ class xTags{
     }
     
 	//Self closing predefined tags
-    public function comment($string){
-        return "<!-- " . htmlspecialchars($string) . " -->";
-    }
-
     public function img($txt,$attr=""){
         return $this->tag('img',$txt,$attr,1);
     }
