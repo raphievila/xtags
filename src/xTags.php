@@ -163,6 +163,10 @@ class xTags{
     }
     
 	//Self closing predefined tags
+    public function comment($string){
+        return "<!-- " . htmlspecialchars($string) . " -->";
+    }
+
     public function img($txt,$attr=""){
         return $this->tag('img',$txt,$attr,1);
     }
