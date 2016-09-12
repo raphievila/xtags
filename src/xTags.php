@@ -130,7 +130,6 @@ class xTags{
         if(is_string($att)){ if($this->checkStringIsJson($att)){ $jn = $this->processJson($att); } else { $jn = $this->processString($att); } }
         else { foreach($att as $k=>$v){ $jn[] = $k.'="'.$v.'"'; } }
         if(is_array($jn)){ $list = join(' ',$jn); $ls = ' '.$list; }
-        $att = 'value';
         if($sclt == 1){
             switch($nm){
                 case 'img': case 'link': $att = 'src'; break;
