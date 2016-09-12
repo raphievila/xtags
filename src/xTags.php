@@ -68,10 +68,10 @@ class xTags{
                 $at = explode(self::s2,$al);
                 $a = $at[0];
                 $e = (isset($at[1]))? str_replace('--','|',str_replace($this->switch,$this->breaks,$at[1])) : '';
-                if(!$asArray){ 
-                    if(!empty($at[0])){ $jn[] = $a.'="'.$e.'"'; }
-                } else {
-                    if(!empty($at[0])){ $jn[$a] = $this->unprocessText($e); }
+                if(!$asArray && !empty($at[0])){ 
+                    $jn[] = $a.'="'.$e.'"';
+                } elseif(!empty($at[0])) {
+                    $jn[$a] = $this->unprocessText($e);
                 }
             }
         }
