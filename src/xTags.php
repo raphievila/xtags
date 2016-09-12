@@ -147,7 +147,7 @@ class xTags{
         return "<!-- " . htmlspecialchars($string) . " -->";
     }
 	
-	//complex tags predefined to simplify coding
+    //complex tags predefined to simplify coding
     public function frm($txt,$att="",$a="",$m="",$e=""){
         $attList = array();
         if(!empty($a)){ $attList['action'] = $a; }
@@ -167,7 +167,7 @@ class xTags{
         return $this->tag('table',$txt,$newatt);
     }
     
-	//Self closing predefined tags
+    //Self closing predefined tags
     public function img($txt,$attr=""){
         return $this->tag('img',$txt,$attr,1);
     }
@@ -184,10 +184,10 @@ class xTags{
         return $this->tag('meta',$txt,$attr,1);
     }
 	
-	//script tag
+    //script tag
     public function script($txt,$type="",$method="text"){
         $attr = "type:$method/";
-        $type = (empty($type))? 'js' : $type;
+        if(empty($type)){ $type = 'js'; }
         switch($type){
             case 'js': $attr .= 'javascript'; break;
             case 'py': $attr .= 'python'; break;
