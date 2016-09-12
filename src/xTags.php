@@ -137,8 +137,10 @@ class xTags{
                 case 'area': $att = 'href'; break;
                 default: $att = 'value';
             }
+        } else {
+            $att = 'value';
         }
-        $r = ($sclt == 0) ? '<'.$nm.$ls.'>'.$ct.'</'.$nm.'>' : '<'.$nm.$ls.' '.$att.'="'.$ct.'" />';
+        $r = ($sclt == 0) ? '<'.$nm.$ls.'>' . $ct . '</' . $nm . '>' : '<' . $nm . $ls . ' ' . $att . '="' . $ct . '" />';
         return $r;
     }
 
