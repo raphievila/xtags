@@ -1,13 +1,27 @@
 {
 	"name": "raphievila/xtags",
-	"version": "v1.0.1-RC",
+	"version": "v1.0.2-RC",
 	"description": "A simple way to create HTML tag directly into PHP code, no code breaks.",
-	"repositories": {
-		"url": "https://github.com/raphievila/xtags.git",
-		"type": "https",
-		"reference": "master"
+	"authors":[
+		{
+			"name": "Rafael Vilá",
+			"email": "rvila@revolutionvisualarts.com",
+			"homepage": "https://revolutionvisualarts.com",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "rvila@revolutionvisualarts.com",
+		"forum": "http://designersgate.com"
 	},
-	"license": "GNU 3.0",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/raphievila/xtags.git",
+			"reference": "master"
+		}
+	],
+	"license": "GPL-3.0",
 	"require": {
 		"php": "^5.3 || ^7.0"
 	},
@@ -23,3 +37,4 @@
 	},
 	"minimum-stability": "stable"
 }
+
