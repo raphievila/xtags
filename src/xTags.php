@@ -116,6 +116,7 @@ class xTags{
     }
     
     private function checkStringIsJson($json){
+        if(is_array($json)){ return FALSE; }
         return (is_object(json_decode($json)));
     }
     
