@@ -179,6 +179,7 @@ class xTags
                 $jn = $this->processString($att);
             }
         } else {
+            $jn = array();
             foreach ($att as $k => $v) {
                 $jn[] = $k.'="'.$v.'"';
             }
