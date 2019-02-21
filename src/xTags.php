@@ -274,6 +274,75 @@ class xTags
             default: $attr .= $type;
         }
 
-        return $this->tag('script', $txt, $attr);
+        return $this->tag('script', $txt, $att);
+    }
+
+    public function picture_tag($params = false)
+    {
+        $requiredParams = ['dir', 'fileName', 'alt'];
+        $availableParams = ['dir', 'fileName', 'alt', 'extension', 'class', 'responsivePattern'];
+
+        if (!$params) {
+            throw new Exception('You need to provide parameters', 500);
+        } elseif (!is_object($params) && !is_array($params)) {
+            throw new Exception('Parameters has to be an object or array.', 500);
+        } else {
+            foreach ($requiredParams as $required) {
+                if (!isset($params->{$required})) {
+                    $available = ' Available parameters: '.join(', ', $availableParams).'.';
+
+                    throw new Exception('Parameter '.$required.' is required.'.$available, 500);
+                }
+            }
+        }
+
+        if (is_array($params)) {
+            $params = (object) $params;
+        }
+
+        $dir = $params->dir;
+        $fileName = $params->fileName;
+        $alt = $params->alt;
+        $class = (!isset($params->class)) ? 'responsive-image' : $params->class;
+        $extension = (!isset($params->extension)) ? 'jpg' : $params->extension;
+        $dash = (!isset($params->dash)) ? '-' : $params->dash;
+        $default = (!isset($params->default)) ? $dash.'3x' : $dash.$params->default;
+        $separator = DIRECTORY_SEPARATOR;
+        $ROOT = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT', FILTER_SANITIZE_STRING);
+
+        if (!isset($params->responsivePattern) || (isset($params->responsivePattern) && !is_array($params->responsivePattern) && !is_object($params->responsivePattern))) {
+            $responsePattern = array(
+                '0.75x' => 360,
+                '1x' => 720,
+                '1.5x' => 1000,
+                '2x' => 1440,
+                '3x' => 1920,
+                '4x' => 3840,
+                '8x' => 7680,
+            );
+        } else {
+            $responsePattern = $params->responsivePattern;
+        }
+
+        arsort($responsePattern);
+
+        $r = '<picture class="'.$class.'">';
+
+        foreach ($responsePattern as $size => $minWidth) {
+            $url = $dir.'/'.$fileName.$dash.$size.'.'.$extension;
+            $rooturi = (!preg_match('/^http[s]?/', $dir)) ? $ROOT.$separator.str_replace('/', $separator, trim($url, '/')) : false;
+
+            if (($rooturi && file_exists($rooturi)) || (!$rooturi && !empty($url))) {
+                $r .= '<source media="(min-width: '
+                    .$minWidth.'px)" srcset="'
+                    .$url.'">';
+            }
+        }
+
+        $r .= '<img src="'.$dir.'/'.$fileName.$default.'.'.$extension.'" class="'.$class.'">';
+
+        $r .= '</picture>';
+
+        return $r;
     }
 }
