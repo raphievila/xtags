@@ -172,6 +172,7 @@ class xTags
     {
         $jn = '';
         $ls = '';
+        echo $this->comment('The attributes sent were '.gettype($att).' type');
         if (is_string($att)) {
             if ($this->checkStringIsJson($att)) {
                 $jn = $this->processJson($att);
@@ -180,7 +181,6 @@ class xTags
             }
         } elseif (is_array($att) || is_object($att)) {
             $jn = array();
-            $this->comment(gettype($att));
             foreach ($att as $k => $v) {
                 $jn[] = $k.'="'.$v.'"';
             }
