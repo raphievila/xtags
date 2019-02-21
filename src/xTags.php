@@ -178,7 +178,7 @@ class xTags
             } else {
                 $jn = $this->processString($att);
             }
-        } else {
+        } elseif (is_array($att) || is_object($att)) {
             $jn = array();
             $this->comment(gettype($att));
             foreach ($att as $k => $v) {
