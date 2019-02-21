@@ -138,7 +138,7 @@ class xTags
         if (is_string($att) && !$this->checkStringIsJson($att)) {
             $att = $this->processStringAsAray($att);
         }
-        if ($this->checkStringIsJson($attList)) {
+        if ($this->checkStringIsJson($att)) {
             $attributes = $this->jsonAttr($attList, $att);
         } elseif (is_object($att) || is_array($att)) {
             $attributes = $this->objAttr($attList, $att);
@@ -180,6 +180,7 @@ class xTags
             }
         } else {
             $jn = array();
+            $this->comment(gettype($att));
             foreach ($att as $k => $v) {
                 $jn[] = $k.'="'.$v.'"';
             }
@@ -278,6 +279,7 @@ class xTags
         return $this->tag('script', $txt, $attr);
     }
 
+    //picture tag
     public function picture_tag($params = false)
     {
         $requiredParams = ['dir', 'fileName', 'alt'];
