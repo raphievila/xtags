@@ -138,7 +138,7 @@ class xTags
         if (is_string($att) && !$this->checkStringIsJson($att)) {
             $att = $this->processStringAsAray($att);
         }
-        if ($this->checkStringIsJson($att)) {
+        if ($this->checkStringIsJson($attList)) {
             $attributes = $this->jsonAttr($attList, $att);
         } elseif (is_object($att) || is_array($att)) {
             $attributes = $this->objAttr($attList, $att);
@@ -189,7 +189,7 @@ class xTags
         }
         if ($sclt == 1) {
             switch ($nm) {
-                case 'img' : case 'link' : $att = 'src'; break;
+                case 'img': case 'link': $att = 'src'; break;
                 case 'area': $att = 'href'; break;
                 default: $att = 'value';
             }
