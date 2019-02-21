@@ -179,6 +179,7 @@ class xTags
                 $jn = $this->processString($att);
             }
         } else {
+            $jn = array();
             foreach ($att as $k => $v) {
                 $jn[] = $k.'="'.$v.'"';
             }
@@ -274,7 +275,7 @@ class xTags
             default: $attr .= $type;
         }
 
-        return $this->tag('script', $txt, $attr);
+        return $this->tag('script', $txt, $att);
     }
 
     public function picture_tag($params = false)
