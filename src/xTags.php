@@ -191,9 +191,14 @@ class xTags
         }
         if ($sclt == 1) {
             switch ($nm) {
-                case 'img': case 'link': $att = 'src'; break;
-                case 'area': $att = 'href'; break;
-                default: $att = 'value';
+                case 'img':
+                    $att = 'src';
+                    break;
+                case 'area': case 'link':
+                    $att = 'href';
+                    break;
+                default:
+                    $att = 'value';
             }
         } else {
             $att = 'value';

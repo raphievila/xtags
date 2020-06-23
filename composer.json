@@ -1,6 +1,6 @@
 {
 	"name": "raphievila/xtags",
-	"version": "v1.0.4",
+	"version": "v1.0.5",
 	"description": "A simple way to create HTML tag directly into PHP code, no code breaks.",
 	"authors":[
 		{
@@ -37,4 +37,3 @@
 	},
 	"minimum-stability": "stable"
 }
-
