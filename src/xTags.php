@@ -179,7 +179,7 @@ class xTags
             } else {
                 $jn = $this->processString($att);
             }
-        } elseif (is_array($att) || is_object($att)) {
+        } else {
             $jn = array();
             foreach ($att as $k => $v) {
                 $jn[] = $k.'="'.$v.'"';
@@ -281,7 +281,7 @@ class xTags
             default: $attr .= $type;
         }
 
-        return $this->tag('script', $txt, $attr);
+        return $this->tag('script', $txt, $att);
     }
 
     //picture tag
